@@ -8,7 +8,7 @@ import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.Registries;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 
 
@@ -146,7 +146,7 @@ public class PlayerPlaceholders {
                 try {
                     Identifier identifier = Identifier.tryParse(arg);
                     if (identifier != null) {
-                        int x = ctx.player().getStatHandler().getStat(Stats.CUSTOM.getOrCreateStat(Registry.CUSTOM_STAT.get(identifier)));
+                        int x = ctx.player().getStatHandler().getStat(Stats.CUSTOM.getOrCreateStat(Registries.CUSTOM_STAT.get(identifier)));
                         return PlaceholderResult.value(String.valueOf(x));
                     }
                 } catch (Exception e) {
