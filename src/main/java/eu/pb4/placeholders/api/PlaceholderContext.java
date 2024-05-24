@@ -128,7 +128,7 @@ public record PlaceholderContext(MinecraftServer server,
 
 
     public interface ViewObject {
-        ViewObject DEFAULT = of(new Identifier("placeholder_api", "default"));
+        ViewObject DEFAULT = of(Identifier.method_60655("placeholder_api", "default"));
 
         static ViewObject of(Identifier identifier) {
             return new ViewObjectImpl(identifier);
